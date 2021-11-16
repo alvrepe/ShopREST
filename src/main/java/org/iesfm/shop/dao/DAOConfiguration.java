@@ -15,9 +15,14 @@ import javax.sql.DataSource;
 @Configuration
 public class DAOConfiguration {
 
+//    @Bean
+//    public ArticleDAO articleDAO(NamedParameterJdbcTemplate jdbc){
+//        return new JDBCArticleDAO(jdbc);
+//    }
+
     @Bean
-    public ArticleDAO articleDAO(NamedParameterJdbcTemplate jdbc){
-        return new JDBCArticleDAO(jdbc);
+    public ArticleDAO articleDAO(){
+        return new InMemoryArticleDAO();
     }
 
     @Bean
